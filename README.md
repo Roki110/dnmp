@@ -1,6 +1,6 @@
 # DNMP
 
-DNMP is Docker Nginx Mysql Php
+DNMP is Docker Nginx MySQL PHP
 
 It's like LAMP (Linux Apache MySQL PHP) but I purpose a variant with docker and nginx.
 I use official images for each to keep it easy to maintain.
@@ -20,9 +20,9 @@ To change configuration it's in /config/<app>
 # Apps version
 
 Currently apps version are :
-    - nginx 1.25.2
-    - php-fpm 8.2.8
-    - mysql 8.0.34
-    - phpmyadmin 5.2.1
+- nginx 1.25.2
+- php-fpm 8.2.8
+- mysql 8.0.34
+- phpmyadmin 5.2.1
 
 I try to use alpine based images for his lightness or if there is no official images that use alpine as base. I choose debian
