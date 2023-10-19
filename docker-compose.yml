@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  web:
+    container_name: dnmp-web
+    image: nginx:1.25.2-alpine3.18-slim
+    ports:
+      - 8000:80
+    volumes:
+      - ./config/nginx:/etc/nginx/conf.d/
+      - ./web/:/var/www/html/
+    depends_on:
+      - pma
+      - php
+
+  php:
+    container_name: dnmp-php
+    image: php:8.2.8-fpm-alpine3.18 # php:5.6-fpm-alpine3.8 # 
+    volumes:
+      - ./web/:/var/www/html/
+
+  db:
+    container_name: dnmp-db
+    image: mysql:8.0.34-debian
+    volumes:
+      # - ./config/mysql/:/etc/mysql/conf.d/
+      - ./db/:/var/lib/mysql/
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=mysql
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=user
+
+  pma:
+    container_name: dnmp-pma
+    image: phpmyadmin:5.2.1-apache
+    ports:
+      - 8001:80
+    environment:
+      #- PMA_ARBITRARY=1
+      #- PMA_ABSOLUTE_URI=https://127.0.0.1:8000/pma
+      - PMA_HOST=dnmp-db
+      - PMA_PORT=3306
+    depends_on:
+      - db
