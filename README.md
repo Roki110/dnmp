@@ -12,10 +12,10 @@ You can use this to dev application for the web.
 
 # How to use it
 
-Put your app in /web and you can access to your via http://<host-ip>:8000
+Put your app in /web and you can access to your via http://host-ip:8000
 Your database is store in /db
 
-To change configuration it's in /config/<app>
+To change configuration it's in /config/app
 
 # Apps version
 
