@@ -8,11 +8,14 @@ I use official images for each to keep it easy to maintain.
 # Why use it ?
 
 You can use this to dev application for the web.
-/!\ WARNING: It shouldn't be use for production environment. Create dedicated images of your app in a production environment
+
+/!\ WARNING: It shouldn't be use for production environment.
+Create dedicated images of your app in a production environment
 
 # How to use it
 
-Put your app in /web and you can access to your via http://host-ip:8000
+Put your app in /web and you can access it via http://host-ip:8000
+
 Your database is store in /db
 
 To change configuration it's in /config/app
